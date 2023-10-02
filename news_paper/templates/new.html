@@ -1,0 +1,32 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+<h1>{{ new.title|censor }}</h1>
+{% endblock title %}
+
+{% block content %}
+
+<hr>
+<h3>Дата публикации: {{ new.dateCreation|date:'M-d-Y H:m' }}</h3>
+<hr>
+{% if new.postCategory.exists %}
+    <h5>Категории:</h5>
+    <ul>
+        {% for category in new.postCategory.all %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h5>Категории отсутствуют</h5>
+{% endif %}
+<hr>
+<a>{{ new.text|censor }}</a>
+<br><br>
+<a class="btn btn-primary" href="{% url 'main_page' %}">На главную</a>
+<br><br>
+
+{% endblock content %}
+
+
