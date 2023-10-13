@@ -17,8 +17,9 @@ from django.conf import settings
 from decouple import config
 from django.core.cache import cache
 
-# EMAIL_HOST_PASSWORD = settings.EMAIL_HOST_PASSWORD
-# DEFAULT_FROM_EMAIL = settings.DEFAULT_FROM_EMAIL
+import logging
+
+logger = logging.getLogger('django')
 
 class NewsListView(ListView):
     model = Post
@@ -133,12 +134,11 @@ class NewsCreateView(PermissionRequiredMixin, CreateView):
                 msg = EmailMultiAlternatives(
                     subject=f'{self.object.title}',
                     body=self.object.text,
-                    from_email='roma.sitdikov@yandex.ru',
+                    from_email='e.cool7@yandex.ru',
                     to=[f'{sub.email}'],
                 )
                 msg.attach_alternative(html_content, "text/html")  # добавляем html
-                msg.send()  # отсылаем
-
+                print(html_content)
         return HttpResponseRedirect(self.get_success_url())
 
 class NewsDeleteView(DeleteView):

@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/logging/config.py", line 770, in add_handlers
+    logger.addHandler(self.config['handlers'][h])
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/logging/config.py", line 325, in __getitem__
+    value = dict.__getitem__(self, key)
+KeyError: 'mail_admins'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/logging/config.py", line 618, in configure
+    self.configure_logger(name, loggers[name])
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/logging/config.py", line 795, in configure_logger
+    self.common_logger_config(logger, config, incremental)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/logging/config.py", line 787, in common_logger_config
+    self.add_handlers(logger, handlers)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/logging/config.py", line 772, in add_handlers
+    raise ValueError('Unable to add handler %r' % h) from e
+ValueError: Unable to add handler 'mail_admins'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/evgenijgubyrin/PycharmProjects/np_d6/venv/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/evgenijgubyrin/PycharmProjects/np_d6/venv/lib/python3.9/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    autoreload.raise_last_exception()
+  File "/Users/evgenijgubyrin/PycharmProjects/np_d6/venv/lib/python3.9/site-packages/django/utils/autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "/Users/evgenijgubyrin/PycharmProjects/np_d6/venv/lib/python3.9/site-packages/django/core/management/__init__.py", line 394, in execute
+    autoreload.check_errors(django.setup)()
+  File "/Users/evgenijgubyrin/PycharmProjects/np_d6/venv/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/evgenijgubyrin/PycharmProjects/np_d6/venv/lib/python3.9/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/Users/evgenijgubyrin/PycharmProjects/np_d6/venv/lib/python3.9/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/logging/config.py", line 809, in dictConfig
+    dictConfigClass(config).configure()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/logging/config.py", line 620, in configure
+    raise ValueError('Unable to configure logger '
+ValueError: Unable to configure logger 'django.request'

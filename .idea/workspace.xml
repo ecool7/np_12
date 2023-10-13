@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="687d6068-de39-4fc5-b16b-31598f18ede1" name="Changes" comment="" />
+    <list default="true" id="687d6068-de39-4fc5-b16b-31598f18ede1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_paper/errors.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_paper/general.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_paper/logs/errors.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_paper/logs/general.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_paper/logs/security.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_paper/security.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news_paper/cache_files/57c5822ab08ed23c0e6bbb6773a18872.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/news_paper/cache_files/57c5822ab08ed23c0e6bbb6773a18872.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news_paper/cache_files/91cc181979a27ca39083d54dab8e06b0.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/news_paper/cache_files/91cc181979a27ca39083d54dab8e06b0.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news_paper/newapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news_paper/newapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news_paper/news_paper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/news_paper/news_paper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news_paper/templates/cat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/news_paper/templates/send_mail_subscribe_to_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/news_paper/templates/send.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news_paper/templates/weekly_article_list_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/news_paper/templates/list_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,23 +31,34 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2WCYvQLpkIgXCHcRJvApXyVVU2K" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/evgenijgubyrin/PycharmProjects/np_d6",
-    "settings.editor.selected.configurable": "preferences.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/evgenijgubyrin/PycharmProjects/np_d6&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NP_D6" />
@@ -64,5 +92,19 @@
       <updated>1696238259343</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

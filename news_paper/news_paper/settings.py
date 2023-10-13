@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from decouple import config
+import logging
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,6 +15,7 @@ SECRET_KEY = 'django-insecure-l5+=&fbwi_zfr9ag=&^-&vmg&6_!1=^i3ym8a08oxs)vx!lpq5
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -173,4 +175,125 @@ CACHES = {
         'LOCATION': os.path.join(BASE_DIR, 'cache_files'), # Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
     }
 }
+ADMINS = [("Eugen", "e.cool7@yandex.ru")]
 
+LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
+os.makedirs(LOGGING_DIR, exist_ok=True)
+
+LOGGING = {
+     'version': 1,
+     'disable_existing_loggers': False,
+     'filters': {
+         'require_debug_true': {
+             '()': 'django.utils.log.RequireDebugTrue',
+         },
+         'require_debug_false': {
+             '()': 'django.utils.log.RequireDebugFalse',
+         },
+     },
+     'formatters': {
+         'formatter_debug': {
+             'format': '{asctime} - {levelname} - {message}\n',
+             'style': '{',
+         },
+         'formatter_warning': {
+             'format': '{asctime} - {levelname} - {message} - {pathname}\n',
+             'style': '{',
+         },
+         'formatter_error': {
+             'format': '{asctime} - {levelname} - {message} - {pathname} - {exc_info}\n',
+             'style': '{',
+         },
+         'formatter_info': {
+             'format': '{asctime} - {levelname} - {module} - {message}\n',
+             'style': '{',
+         },
+     },
+     'handlers': {
+         'console_debug': {
+             'level': 'DEBUG',
+             'class': 'logging.StreamHandler',
+             'formatter': 'formatter_debug',
+             'filters': ['require_debug_true'],
+         },
+         'console_warning': {
+             'level': 'WARNING',
+             'class': 'logging.StreamHandler',
+             'formatter': 'formatter_warning',
+             'filters': ['require_debug_true'],
+         },
+         'console_error': {
+             'level': 'ERROR',
+             'class': 'logging.StreamHandler',
+             'formatter': 'formatter_error',
+             'filters': ['require_debug_true'],
+         },
+         'file_info': {
+             'level': 'INFO',
+             'class': 'logging.FileHandler',
+             'filename': 'general.log',
+             'formatter': 'formatter_info',
+             'filters': ['require_debug_false'],
+         },
+         'file_error': {
+             'level': 'ERROR',
+             'class': 'logging.FileHandler',
+             'filename': 'errors.log',
+             'formatter': 'formatter_error',
+         },
+         'file_security': {
+             'level': 'DEBUG',
+             'class': 'logging.FileHandler',
+             'filename': 'security.log',
+             'formatter': 'formatter_info',
+         },
+         'mail_error': {
+             'level': 'ERROR',
+             'class': 'django.utils.log.AdminEmailHandler',
+             'formatter': 'formatter_warning',
+             'filters': ['require_debug_false'],
+         },
+         'mail_handler': {
+             'level': 'ERROR',
+             'class': 'logging.handlers.SMTPHandler',
+             'mailhost': (EMAIL_HOST, EMAIL_PORT),
+             'fromaddr': EMAIL_HOST_USER,
+             'toaddrs': [admin[1] for admin in ADMINS],
+             'subject': '[Django Error] Critical error on your Django site',
+             'credentials': (EMAIL_HOST_USER, EMAIL_HOST_PASSWORD),
+             'secure': (),
+         },
+     },
+     'loggers': {
+         'django': {
+             'handlers': ['console_debug', 'console_warning', 'console_error', 'file_info'],
+             'level': 'DEBUG',
+             'propagate': True,
+         },
+         'django.request': {
+             'handlers': ['file_error', 'mail_error', 'mail_handler'],
+             'level': 'ERROR',
+             'propagate': True,
+         },
+         'django.server': {
+             'handlers': ['file_error', 'mail_error', 'mail_handler'],
+             'level': 'ERROR',
+             'propagate': True,
+         },
+         'django.template': {
+             'handlers': ['file_error'],
+             'level': 'ERROR',
+             'propagate': True,
+         },
+         'django.db_backends': {
+             'handlers': ['file_error'],
+             'level': 'ERROR',
+             'propagate': True,
+         },
+         'django.security': {
+             'handlers': ['file_security'],
+             'level': 'DEBUG',
+             'propagate': True,
+         },
+     },
+ }
